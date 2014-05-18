@@ -13,6 +13,7 @@ def run():
 def process_line(line):
 	print line
 	print "eeeeeh"
+	#todo: replace "" for " when part of a word ("id"" -> "id")
 
 
 if __name__ == "__main__":
