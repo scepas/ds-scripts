@@ -2,19 +2,21 @@
 
 #import fileinput
 import sys
+import re
 
-#def clean_line:
+pattern = re.compile(r'"{2,}')
 
+#(?<!")"{2,}(?!")
 def run():
 	input_stream = sys.stdin
 	for line in input_stream:
 		process_line(line)
 
 def process_line(line):
-	print line
-	print "eeeeeh"
-	#todo: replace "" for " when part of a word ("id"" -> "id")
-
+	#replace "" for " ("id"" -> "id")
+	l = pattern.sub('"', line)
+	print l,
+	#print line
 
 if __name__ == "__main__":
 	try:
